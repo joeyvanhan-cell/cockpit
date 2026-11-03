@@ -58,7 +58,7 @@ ul{margin:0;padding-left:1.2em}
 li{margin:4px 0}
 .note{color:var(--muted);font-size:13px;margin:10px 0 0}
 .dl{position:absolute;transform:translate(-50%,-50%);background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font:500 12px var(--mono);white-space:nowrap;pointer-events:none;font-variant-numeric:tabular-nums}
-#dm[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
+#dm[aria-pressed="true"],#pl[aria-pressed="true"],#ar[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent)}
 </style>
 <style>body{margin:0}</style>
 </head>
@@ -86,6 +86,8 @@ li{margin:4px 0}
       <button id="zo" type="button" aria-label="Uitzoomen">−</button>
       <button id="rs" type="button">Reset</button>
       <button id="dm" type="button" aria-pressed="false">Maten tonen</button>
+      <button id="pl" type="button" aria-pressed="false">Plaatwerk tonen</button>
+      <button id="ar" type="button" aria-pressed="true">Achterplaat aan</button>
     </div>
     <div class="legend">
       <span><i style="background:#888780"></i>Binnenframe</span>
@@ -94,6 +96,7 @@ li{margin:4px 0}
       <span><i style="background:#D85A30"></i>Schermen</span>
       <span><i style="background:#378ADD"></i>Monitormount (bestaand)</span>
       <span><i style="background:#1D9E75"></i>Rig en tensioner</span>
+      <span><i style="background:#202020;border:1px solid var(--line)"></i>Plaatwerk</span>
     </div>
     <p class="note">Sleep om te draaien, knijp of scroll om te zoomen. Stoel, stuur, tensioner en monitormount zijn schematisch.</p>
   </section>
@@ -105,6 +108,7 @@ li{margin:4px 0}
       <div class="dim"><b>1,80 m</b><small>hoogte</small></div>
       <div class="dim"><b>±2,12 m</b><small>totale breedte, over de hele lengte</small></div>
       <div class="dim"><b>≥10 cm</b><small>tussen achterhoek zijscherm en zijwand</small></div>
+      <div class="dim"><b>±24 m²</b><small>plaat om alles dicht te maken</small></div>
       <div class="dim"><b>±1,7 m</b><small>vrije vloer links voor de deur</small></div>
     </div>
     <div class="dims" data-v="S" hidden>
@@ -112,6 +116,7 @@ li{margin:4px 0}
       <div class="dim"><b>1,80 m</b><small>hoogte</small></div>
       <div class="dim"><b>±2,46 m</b><small>totale breedte achterin</small></div>
       <div class="dim"><b>70°</b><small>hoek zijframes en zijschermen</small></div>
+      <div class="dim"><b>±22 m²</b><small>plaat om alles dicht te maken</small></div>
       <div class="dim"><b>±1,7 m</b><small>vrije vloer links voor de deur</small></div>
     </div>
   </section>
@@ -132,7 +137,7 @@ li{margin:4px 0}
           <tr><td class="n">3×</td><td>Voorligger naar binnenframe</td><td class="l">±620 mm</td></tr>
           <tr><td class="n">3×</td><td>Achterligger naar binnenframe</td><td class="l">±620 mm</td></tr>
           <tr><td class="n">2×</td><td>Langsligger binnenkant: vloer en midden</td><td class="l">±1.480 mm</td></tr>
-          <tr><td class="n">2×</td><td>Vloerdwarsligger</td><td class="l">±560 mm</td></tr>
+          <tr><td class="n">2×</td><td>Dwarsligger onder legvlak</td><td class="l">±560 mm</td></tr>
           <tr><td class="n">1×</td><td>Korte staander binnenkant voor</td><td class="l">±560 mm</td></tr>
           <tr class="grp"><td colspan="3">Links: vast deel</td></tr>
           <tr><td class="n">1×</td><td>Scharnierstaander</td><td class="l">1.800 mm</td></tr>
@@ -143,7 +148,7 @@ li{margin:4px 0}
           <tr><td class="n">3×</td><td>Achterligger</td><td class="l">±560 mm</td></tr>
           <tr><td class="n">2×</td><td>Langsligger binnenkant: vloer en midden</td><td class="l">±1.460 mm</td></tr>
           <tr><td class="n">2×</td><td>Dwarsligger voor: vloer en midden</td><td class="l">±560 mm</td></tr>
-          <tr><td class="n">2×</td><td>Vloerdwarsligger</td><td class="l">±560 mm</td></tr>
+          <tr><td class="n">2×</td><td>Dwarsligger onder legvlak</td><td class="l">±560 mm</td></tr>
           <tr><td class="n">1×</td><td>Korte staander binnenkant voor</td><td class="l">±560 mm</td></tr>
           <tr><td class="n">2×</td><td>Zwenkwiel, ±90 mm bouwhoogte</td><td class="l">–</td></tr>
         </tbody>
@@ -167,8 +172,8 @@ li{margin:4px 0}
           <tr><td class="n">1×</td><td>Achterligger middenhoogte</td><td class="l">±790 mm</td></tr>
           <tr><td class="n">1×</td><td>Korte staander binnenkant voor</td><td class="l">±560 mm</td></tr>
           <tr><td class="n">1×</td><td>Vloerligger langs het binnenframe</td><td class="l">±1.480 mm</td></tr>
-          <tr><td class="n">1×</td><td>Vloerdwarsligger midden</td><td class="l">±340 mm</td></tr>
-          <tr><td class="n">1×</td><td>Vloerdwarsligger achter</td><td class="l">±520 mm</td></tr>
+          <tr><td class="n">1×</td><td>Dwarsligger onder legvlak, midden</td><td class="l">±340 mm</td></tr>
+          <tr><td class="n">1×</td><td>Dwarsligger onder legvlak, achter</td><td class="l">±520 mm</td></tr>
           <tr class="grp"><td colspan="3">Links: vast deel</td></tr>
           <tr><td class="n">1×</td><td>Scharnierstaander</td><td class="l">1.800 mm</td></tr>
           <tr><td class="n">2×</td><td>Koppeling voorin, onder en boven</td><td class="l">±230 mm</td></tr>
@@ -179,8 +184,8 @@ li{margin:4px 0}
           <tr><td class="n">1×</td><td>Achterligger middenhoogte</td><td class="l">±730 mm</td></tr>
           <tr><td class="n">2×</td><td>Langsligger binnenkant: vloer en midden</td><td class="l">±1.480 mm</td></tr>
           <tr><td class="n">2×</td><td>Dwarsligger voor naar de deurstaander: vloer en midden</td><td class="l">±190 mm</td></tr>
-          <tr><td class="n">1×</td><td>Vloerdwarsligger midden</td><td class="l">±340 mm</td></tr>
-          <tr><td class="n">1×</td><td>Vloerdwarsligger achter</td><td class="l">±520 mm</td></tr>
+          <tr><td class="n">1×</td><td>Dwarsligger onder legvlak, midden</td><td class="l">±340 mm</td></tr>
+          <tr><td class="n">1×</td><td>Dwarsligger onder legvlak, achter</td><td class="l">±520 mm</td></tr>
           <tr><td class="n">1×</td><td>Korte staander binnenkant voor</td><td class="l">±560 mm</td></tr>
           <tr><td class="n">2×</td><td>Zwenkwiel, ±90 mm bouwhoogte</td><td class="l">–</td></tr>
         </tbody>
@@ -195,6 +200,7 @@ li{margin:4px 0}
       <li>Onderste liggers van beide zijframes op 90 mm, zodat de 80×40-voet van de monitormount (op z'n kant) eronder doorloopt. De deur rust op zwenkwielen van ±90 mm bouwhoogte.</li>
       <li>Onderkant schermen: nu aangenomen op 75 cm. De middenligger zit daar net onder, op ±71 cm.</li>
       <li>Voet van de losse monitormount mag niet in de draaicirkel van de deur staan.</li>
+      <li>Plaatwerk: dak, achterkant, zijwanden en voorkant zijn dicht. Het onderste vak van beide zijframes (tot de middenligger) is een gesloten bak: vloer, bovenkant en binnenwand. De dwarsliggers zitten onder de bovenplaat, zodat je daar spullen op kunt leggen. Onderin blijft 90 mm open voor de voeten van de mount. Plan ventilatie voor de warmte van de schermen en een greep aan de deur.</li>
       <li>Drie zware scharnieren en een diagonaal in de deur tegen doorzakken.</li>
     </ul>
   </section>
@@ -226,7 +232,7 @@ box(40,1800,40,651,900,440,purple,0,gS);box(40,1800,40,1211,900,1980,purple,0,gS
 [110,1780].forEach(y=>{box(40,40,1639,931,y,1210,purple,0.349,gS);box(791,40,40,795,y,1980,purple,0,gS);box(231,40,40,515,y,440,purple,0,gS);box(231,40,40,-515,y,440,gray,0,gS);});
 box(40,40,1639,931,710,1210,purple,0.349,gS);
 box(171,40,40,545,710,440,purple,0,gS);box(40,40,1500,440,710,1210,purple,0,gS);box(791,40,40,795,710,1980,purple,0,gS);box(40,560,40,440,410,460,purple,0,gS);
-box(40,40,1480,440,110,1220,purple,0,gS);box(338,40,40,629,110,900,purple,0,gS);box(520,40,40,720,110,1400,purple,0,gS);
+box(40,40,1480,440,110,1220,purple,0,gS);box(338,40,40,629,710,900,purple,0,gS);box(520,40,40,720,710,1400,purple,0,gS);
 box(40,1800,40,-651,900,440,gray,0,gS);
 const doorS=new THREE.Group();doorS.position.set(-0.651,0.09,0.44);gS.add(doorS);
 box(40,1710,40,-17,855,48,dpurple,0,doorS);
@@ -237,14 +243,14 @@ box(40,40,1588,-288,620,794,dpurple,-0.349,doorS);
 box(40,40,1480,211,20,780,dpurple,0,doorS);box(40,40,1480,211,620,780,dpurple,0,doorS);
 box(188,40,40,97,620,40,dpurple,0,doorS);box(188,40,40,97,20,40,dpurple,0,doorS);
 box(40,560,40,211,320,40,dpurple,0,doorS);box(731,40,40,-175,620,1540,dpurple,0,doorS);
-box(338,40,40,22,20,460,dpurple,0,doorS);box(520,40,40,-69,20,960,dpurple,0,doorS);
+box(338,40,40,22,620,460,dpurple,0,doorS);box(520,40,40,-69,620,960,dpurple,0,doorS);
 [20,1690].forEach(y=>{box(40,40,1588,-288,y,794,dpurple,-0.349,doorS);box(771,40,40,-154,y,1540,dpurple,0,doorS);});
 
 const gR=new THREE.Group();scene.add(gR);
 box(40,1800,40,1040,900,440,purple,0,gR);box(40,1800,40,1040,900,1980,purple,0,gR);
 [110,710,1780].forEach(y=>{box(40,40,1500,1040,y,1210,purple,0,gR);box(620,40,40,710,y,440,purple,0,gR);box(620,40,40,710,y,1980,purple,0,gR);box(620,40,40,-710,y,440,gray,0,gR);});
 box(40,40,1480,440,110,1220,purple,0,gR);box(40,40,1500,440,710,1210,purple,0,gR);
-box(560,40,40,740,110,900,purple,0,gR);box(560,40,40,740,110,1400,purple,0,gR);
+box(560,40,40,740,710,900,purple,0,gR);box(560,40,40,740,710,1400,purple,0,gR);
 box(40,560,40,440,410,480,purple,0,gR);
 box(40,1800,40,-1040,900,440,gray,0,gR);
 const doorR=new THREE.Group();doorR.position.set(-1.04,0.09,0.44);gR.add(doorR);
@@ -254,7 +260,7 @@ box(40,1710,40,600,855,1540,dpurple,0,doorR);
 casters([[0,1540],[600,1540]],doorR);
 [20,620,1690].forEach(y=>{box(40,40,1452,0,y,794,dpurple,0,doorR);box(560,40,40,300,y,1540,dpurple,0,doorR);});
 [20,620].forEach(y=>{box(40,40,1460,600,y,790,dpurple,0,doorR);box(560,40,40,300,y,48,dpurple,0,doorR);});
-box(560,40,40,300,20,460,dpurple,0,doorR);box(560,40,40,300,20,960,dpurple,0,doorR);
+box(560,40,40,300,620,460,dpurple,0,doorR);box(560,40,40,300,620,960,dpurple,0,doorR);
 box(40,560,40,600,320,60,dpurple,0,doorR);
 
 [1,-1].forEach(k=>box(1068,612,43,717*k,1056,1035,coral,-1.222*k));
@@ -275,6 +281,27 @@ const back=box(500,850,90,0,720,1470,dark);back.rotation.x=-0.25;
 box(440,40,40,0,980,1700,teal);
 const grid=new THREE.GridHelper(5,20,0x888780,0x888780);grid.material.opacity=0.3;grid.material.transparent=true;grid.position.set(0,0,1);scene.add(grid);
 
+const plate=new THREE.MeshLambertMaterial({color:0x202020,transparent:true,opacity:0.88,side:THREE.DoubleSide,depthWrite:false});
+const pA=new THREE.Group(),pS=new THREE.Group(),pSd=new THREE.Group(),pR=new THREE.Group(),pRd=new THREE.Group();
+scene.add(pA);gS.add(pS);doorS.add(pSd);gR.add(pR);doorR.add(pRd);
+const rA=new THREE.Group(),rS=new THREE.Group(),rSd=new THREE.Group(),rR=new THREE.Group(),rRd=new THREE.Group();
+scene.add(rA);gS.add(rS);doorS.add(rSd);gR.add(rR);doorR.add(rRd);
+function roof(pts,y,par){const sh=new THREE.Shape(pts.map(q=>new THREE.Vector2(q[0]*s,q[1]*s)));const m=new THREE.Mesh(new THREE.ShapeGeometry(sh),plate);m.rotation.x=Math.PI/2;m.position.y=y*s;par.add(m);}
+box(800,1800,3,0,900,-2,plate,0,pA);box(800,1800,3,0,900,2002,plate,0,rA);box(800,3,2000,0,1802,1000,plate,0,pA);
+[1,-1].forEach(k=>box(3,1800,420,402*k,900,210,plate,0,pA));
+box(3,1710,1640,952,945,1202,plate,0.349,pS);box(271,1710,3,535,945,418,plate,0,pS);box(831,1710,3,815,945,2002,plate,0,rS);
+box(271,1710,3,-535,945,418,plate,0,pS);
+roof([[400,420],[671,420],[1231,2000],[400,2000]],1802,pS);
+box(3,1710,1590,-308,855,787,plate,-0.349,pSd);box(811,1710,3,-175,855,1562,plate,0,rSd);
+roof([[231,28],[231,1560],[-580,1560],[-37,28]],1712,pSd);
+box(3,1710,1580,1062,945,1210,plate,0,pR);box(660,1710,3,730,945,418,plate,0,pR);box(660,1710,3,730,945,2002,plate,0,rR);
+box(660,3,1580,730,1802,1210,plate,0,pR);box(660,1710,3,-730,945,418,plate,0,pR);
+box(3,1710,1540,-22,855,794,plate,0,pRd);box(640,1710,3,300,855,1562,plate,0,rRd);box(640,3,1532,300,1712,794,plate,0,pRd);
+[132,732].forEach(y=>{box(640,3,1520,740,y,1220,plate,0,pR);roof([[420,460],[678,460],[1231,1980],[420,1980]],y,pS);});
+box(3,600,1520,418,430,1220,plate,0,pR);box(3,600,1520,418,430,1220,plate,0,pS);
+[42,642].forEach(y=>{box(640,3,1492,300,y,794,plate,0,pRd);roof([[231,48],[231,1540],[-580,1540],[-37,48]],y,pSd);});
+box(3,600,1492,622,330,794,plate,0,pRd);box(640,600,3,300,330,26,plate,0,pRd);
+box(3,600,1492,233,330,794,plate,0,pSd);box(268,600,3,97,330,18,plate,0,pSd);
 const fg=(getComputedStyle(document.documentElement).getPropertyValue('--fg')||'').trim()||'#1b1d22';
 const lineM=new THREE.LineBasicMaterial({color:new THREE.Color(fg)});
 const dotM=new THREE.MeshBasicMaterial({color:new THREE.Color(fg)});
@@ -304,11 +331,13 @@ return {g,m:a.clone().add(b).multiplyScalar(0.5),el};});
 function placeLabels(){labels.forEach(l=>{if(!l.g.visible){l.el.hidden=true;return;}const p=l.m.clone().project(cam);if(p.z>1||p.z<-1){l.el.hidden=true;return;}l.el.hidden=false;l.el.style.left=((p.x+1)/2*W)+'px';l.el.style.top=((1-p.y)/2*H)+'px';});}
 
 const tgt=new THREE.Vector3(0,0.8,1.05);
-const th0=-0.75,ph0=0.42,r0=5.2;let th=th0,ph=ph0,r=r0,ang=0,goal=0,anim=false,variant='R',showDims=false;
+const th0=-0.75,ph0=0.42,r0=5.2;let th=th0,ph=ph0,r=r0,ang=0,goal=0,anim=false,variant='R',showDims=false,showPanels=false,showRear=true;
 const sl=document.getElementById('sl'),sv=document.getElementById('sv'),tg=document.getElementById('tg');
 const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
 function upd(){
   gS.visible=variant==='S';gR.visible=variant==='R';
+  pA.visible=pS.visible=pSd.visible=pR.visible=pRd.visible=showPanels;
+  rA.visible=rS.visible=rSd.visible=rR.visible=rRd.visible=showPanels&&showRear;
   dimG.A.visible=showDims;dimG.S.visible=showDims&&variant==='S';dimG.R.visible=showDims&&variant==='R';
   doorS.rotation.y=doorR.rotation.y=-ang*Math.PI/180;
   cam.position.set(tgt.x+r*Math.sin(th)*Math.cos(ph),tgt.y+r*Math.sin(ph),tgt.z+r*Math.cos(th)*Math.cos(ph));
@@ -336,6 +365,10 @@ document.getElementById('zi').onclick=()=>{r=clampR(r*0.85);upd();};
 document.getElementById('zo').onclick=()=>{r=clampR(r*1.18);upd();};
 const dm=document.getElementById('dm');
 dm.onclick=()=>{showDims=!showDims;dm.setAttribute('aria-pressed',String(showDims));dm.textContent=showDims?'Maten verbergen':'Maten tonen';upd();};
+const pl=document.getElementById('pl');
+pl.onclick=()=>{showPanels=!showPanels;pl.setAttribute('aria-pressed',String(showPanels));pl.textContent=showPanels?'Plaatwerk verbergen':'Plaatwerk tonen';upd();};
+const ar=document.getElementById('ar');
+ar.onclick=()=>{showRear=!showRear;ar.setAttribute('aria-pressed',String(showRear));ar.textContent=showRear?'Achterplaat aan':'Achterplaat uit';if(showRear&&!showPanels)pl.onclick();else upd();};
 document.getElementById('rs').onclick=()=>{th=th0;ph=ph0;r=r0;ang=goal=0;anim=false;upd();};
 window.addEventListener('resize',()=>{W=view.clientWidth;H=view.clientHeight;cam.aspect=W/H;cam.updateProjectionMatrix();ren.setSize(W,H);upd();});
 setVariant('R');
